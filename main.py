@@ -44,7 +44,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": 2990,
         "badge": "Хит",
         "description": "Невероятно мягкий мишка из гипоаллергенного плюша для уютных объятий.",
-        "image": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-001/900/900",
         "age_label": "3+",
         "in_stock": True,
     },
@@ -56,7 +56,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": None,
         "badge": "Новинка",
         "description": "Нежный зайка в пастельных оттенках, который легко станет любимцем малыша.",
-        "image": "https://images.unsplash.com/photo-1563901935883-cb10a08a1d7c?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-002/900/900",
         "age_label": "0+",
         "in_stock": True,
     },
@@ -68,7 +68,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": 1890,
         "badge": "Скидка",
         "description": "Развивает моторику и восприятие цвета. Безопасный ABS-пластик без запаха.",
-        "image": "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-003/900/900",
         "age_label": "1+",
         "in_stock": True,
     },
@@ -80,7 +80,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": None,
         "badge": "Хит",
         "description": "6 игровых зон для развития логики, внимания и мелкой моторики.",
-        "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-004/900/900",
         "age_label": "2+",
         "in_stock": True,
     },
@@ -92,7 +92,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": None,
         "badge": "Новинка",
         "description": "Лёгкие кубики с мягкими гранями для безопасной игры и первых башен.",
-        "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-005/900/900",
         "age_label": "1+",
         "in_stock": True,
     },
@@ -104,7 +104,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": 3290,
         "badge": "Скидка",
         "description": "Собери уютный городок: домики, парк и милые персонажи в одном наборе.",
-        "image": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-006/900/900",
         "age_label": "4+",
         "in_stock": True,
     },
@@ -116,7 +116,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": None,
         "badge": "Хит",
         "description": "Светящиеся детали с безопасными магнитами для фантазийных конструкций.",
-        "image": "https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-007/900/900",
         "age_label": "5+",
         "in_stock": True,
     },
@@ -128,7 +128,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": None,
         "badge": "Новинка",
         "description": "Помогает изучать формы и цвета. Идеален для первых самостоятельных игр.",
-        "image": "https://images.unsplash.com/photo-1621600411688-4be93ce4bd45?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-008/900/900",
         "age_label": "2+",
         "in_stock": True,
     },
@@ -140,7 +140,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": 5190,
         "badge": "Скидка",
         "description": "Готовый премиальный набор: мягкая игрушка, игра и открытка.",
-        "image": "https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-009/900/900",
         "age_label": "3+",
         "in_stock": True,
     },
@@ -152,7 +152,7 @@ PRODUCTS: list[dict[str, Any]] = [
         "old_price": None,
         "badge": "Хит",
         "description": "Нежные мелодии, сенсорные элементы и безопасные материалы для малышей.",
-        "image": "https://images.unsplash.com/photo-1607453998774-d533f65dac99?auto=format&fit=crop&w=900&q=80",
+        "image": "https://picsum.photos/seed/sweet-toy-010/900/900",
         "age_label": "0+",
         "in_stock": True,
     },
@@ -459,6 +459,18 @@ def index() -> str:
       transform: translateY(110%); transition: .25s ease; z-index: 50; overflow:auto;
     }
     .sheet.open { transform: translateY(0); }
+    .overlay{
+      position:fixed; inset:0; background:rgba(27,20,16,.34);
+      z-index:49; opacity:0; pointer-events:none; transition:.24s;
+    }
+    .overlay.open{opacity:1;pointer-events:auto}
+    .sheet-head{
+      display:flex;align-items:center;justify-content:space-between;gap:10px
+    }
+    .close-btn{
+      width:34px;height:34px;border:none;border-radius:999px;background:#f6eee6;
+      font-size:20px;line-height:1;color:#4b3f36
+    }
     .sheet-title { margin: 0 0 12px; font-size: 20px; }
     .cart-item { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0e8e2; }
     .qty { display: inline-flex; gap: 6px; align-items:center; }
@@ -492,6 +504,7 @@ def index() -> str:
     <button class="nav-btn" id="catalogBtn">Каталог</button>
     <button class="nav-btn primary" id="cartBtn">Корзина · 0</button>
   </div>
+  <div class="overlay" id="overlay"></div>
   <section class="sheet" id="sheet"></section>
   <div class="toast" id="toast"></div>
 <script>
@@ -504,11 +517,14 @@ let searchValue = '';
 let cart = {};
 const appEl = document.getElementById('app');
 const sheetEl = document.getElementById('sheet');
+const overlayEl = document.getElementById('overlay');
 const toastEl = document.getElementById('toast');
 const cartBtn = document.getElementById('cartBtn');
 const stickyCart = document.getElementById('stickyCart');
 function price(v) { return new Intl.NumberFormat('ru-RU').format(v) + ' ₽'; }
 function toast(msg) { toastEl.textContent = msg; toastEl.classList.add('show'); setTimeout(() => toastEl.classList.remove('show'), 1200); }
+const fallbackImage = "data:image/svg+xml;utf8," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='#fff2e6'/><stop offset='1' stop-color='#fbe4ea'/></linearGradient></defs><rect width='100%' height='100%' fill='url(#g)'/><text x='50%' y='48%' dominant-baseline='middle' text-anchor='middle' fill='#6f5e52' font-family='Arial' font-size='42'>Sweet Toys</text><text x='50%' y='56%' dominant-baseline='middle' text-anchor='middle' fill='#8d7b6f' font-family='Arial' font-size='24'>Изображение обновляется</text></svg>`);
+function safeImage(url){ return `src="${url}" onerror="this.onerror=null;this.src='${fallbackImage}'"`; }
 function productMatchesSearch(p){
   if(!searchValue) return true;
   const q = searchValue.toLowerCase();
@@ -580,26 +596,38 @@ function renderHome() {
   updateCartUI();
 }
 function cardTpl(p) {
-  return `<article class="card"><div class="img-wrap" onclick="openProduct('${p.id}')"><img src="${p.image}" alt="${p.name}" loading="lazy" />${p.badge ? `<span class='badge'>${p.badge}</span>` : ''}<span class='age'>${p.age_label}</span></div><div class="content"><p class="name">${p.name}</p><p class="desc">${p.description}</p><div class="price-row"><span class="price">${price(p.price)}</span>${p.old_price ? `<span class='old-price'>${price(p.old_price)}</span>` : ''}</div><button class="btn" onclick="addToCart('${p.id}', 1)">Добавить</button></div></article>`;
+  return `<article class="card"><div class="img-wrap" onclick="openProduct('${p.id}')"><img ${safeImage(p.image)} alt="${p.name}" loading="lazy" />${p.badge ? `<span class='badge'>${p.badge}</span>` : ''}<span class='age'>${p.age_label}</span></div><div class="content"><p class="name">${p.name}</p><p class="desc">${p.description}</p><div class="price-row"><span class="price">${price(p.price)}</span>${p.old_price ? `<span class='old-price'>${price(p.old_price)}</span>` : ''}</div><button class="btn" onclick="addToCart('${p.id}', 1)">Добавить</button></div></article>`;
 }
 function setCategory(cat) { selectedCategory = cat; renderHome(); }
 function openProduct(id) {
   const p = products.find(i => i.id === id);
   if (!p) return;
+  const qtyId = `qty_${p.id}`;
   const also = products.filter(x => x.category === p.category && x.id !== p.id).slice(0,3).map(x=>`<article class='mini-card' onclick="openProduct('${x.id}')"><h4>${x.name}</h4><p>${price(x.price)}</p></article>`).join('');
   sheetEl.innerHTML = `
-    <h3 class='sheet-title'>${p.name}</h3>
-    <img src='${p.image}' style='width:100%;border-radius:16px;max-height:280px;object-fit:cover' />
+    <div class='sheet-head'><h3 class='sheet-title'>Товар</h3><button class='close-btn' onclick='closeSheet()'>×</button></div>
+    <img ${safeImage(p.image)} style='width:100%;border-radius:16px;max-height:280px;object-fit:cover' />
+    <h3 class='sheet-title' style='margin-top:12px'>${p.name}</h3>
     <p style='color:#7d7068;margin:10px 0 0'>${p.description}</p>
     <p style='margin:8px 0 0'><b>${price(p.price)}</b>${p.old_price ? ` <span class='old-price'>${price(p.old_price)}</span>` : ''}</p>
-    <p style='margin:8px 0 0;font-size:13px;color:#6e645b'>Возраст: ${p.age_label} · Категория: ${p.category}</p>
+    <p style='margin:8px 0 0;font-size:13px;color:#6e645b'>Возраст: ${p.age_label} · Категория: ${p.category} · ${p.in_stock ? 'В наличии' : 'Нет в наличии'}</p>
     <div style='margin-top:10px;background:#fff7ef;padding:12px;border-radius:12px;color:#5c5149;font-size:13px'>
       ✅ Безопасные материалы · 🚚 Быстрая связь после заказа · 💬 Удобно через Telegram
     </div>
-    <button class='btn' onclick="addToCart('${p.id}',1); closeSheet();">Добавить в корзину</button>
+    <div style='display:flex;align-items:center;gap:10px;margin-top:10px'>
+      <div class='qty'><button onclick="modalQty('${qtyId}',-1)">−</button><b id='${qtyId}'>1</b><button onclick="modalQty('${qtyId}',1)">+</button></div>
+      <button class='btn' style='margin:0' onclick="addToCart('${p.id}', modalQtyRead('${qtyId}')); closeSheet();">Добавить в корзину</button>
+    </div>
     <h4 style='margin:16px 0 8px'>С этим товаром берут</h4>
     <div class='cards-row'>${also || "<article class='mini-card'><h4>Подборки обновляются</h4><p>Скоро добавим больше рекомендаций.</p></article>"}</div>`;
   openSheet();
+}
+function modalQtyRead(id){ const el = document.getElementById(id); return Math.max(1, Number(el?.textContent || 1)); }
+function modalQty(id, delta){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const next = Math.max(1, Number(el.textContent || 1) + delta);
+  el.textContent = String(next);
 }
 function addToCart(id, qty) { cart[id] = (cart[id] || 0) + qty; toast('Добавлено в корзину'); updateCartUI(); }
 function changeQty(id, delta) { cart[id] = (cart[id] || 0) + delta; if (cart[id] <= 0) delete cart[id]; renderCart(); updateCartUI(); }
@@ -609,14 +637,14 @@ function updateCartUI() { const count = Object.values(cart).reduce((s, n) => s +
 function renderCart() {
   const items = cartItems();
   if (!items.length) {
-    sheetEl.innerHTML = `<h3 class='sheet-title'>Корзина</h3><div class='empty'><strong>Корзина пока пустая</strong>Добавьте понравившиеся игрушки, чтобы оформить заказ.</div>`;
+    sheetEl.innerHTML = `<div class='sheet-head'><h3 class='sheet-title'>Корзина</h3><button class='close-btn' onclick='closeSheet()'>×</button></div><div class='empty'><strong>Корзина пока пустая</strong>Добавьте понравившиеся игрушки, чтобы оформить заказ.</div>`;
     openSheet();
     return;
   }
-  sheetEl.innerHTML = `<h3 class='sheet-title'>Корзина</h3>${items.map(i => `<div class='cart-item'><div><div style='font-weight:600'>${i.name}</div><div style='color:#7e746d;font-size:13px'>${price(i.price*i.qty)}</div></div><div class='qty'><button onclick="changeQty('${i.id}',-1)">−</button><b>${i.qty}</b><button onclick="changeQty('${i.id}',1)">+</button></div></div>`).join('')}<div class='sticky-checkout'><p style='font-size:18px;margin:0 0 8px'><b>Итого: ${price(cartTotal())}</b></p><button class='btn' onclick='renderCheckout()'>Оформить заказ</button></div>`;
+  sheetEl.innerHTML = `<div class='sheet-head'><h3 class='sheet-title'>Корзина</h3><button class='close-btn' onclick='closeSheet()'>×</button></div>${items.map(i => `<div class='cart-item'><div><div style='font-weight:600'>${i.name}</div><div style='color:#7e746d;font-size:13px'>${price(i.price*i.qty)}</div></div><div class='qty'><button onclick="changeQty('${i.id}',-1)">−</button><b>${i.qty}</b><button onclick="changeQty('${i.id}',1)">+</button></div></div>`).join('')}<div class='sticky-checkout'><p style='font-size:18px;margin:0 0 8px'><b>Итого: ${price(cartTotal())}</b></p><button class='btn' onclick='renderCheckout()'>Оформить заказ</button></div>`;
   openSheet();
 }
-function renderCheckout() { sheetEl.innerHTML = `<h3 class='sheet-title'>Оформление заказа</h3><input id='name' class='field' placeholder='Ваше имя' /><input id='phone' class='field' placeholder='Телефон' /><textarea id='comment' class='field' rows='3' placeholder='Комментарий к заказу'></textarea><button class='btn' onclick='submitOrder()'>Отправить заказ</button>`; }
+function renderCheckout() { sheetEl.innerHTML = `<div class='sheet-head'><h3 class='sheet-title'>Оформление заказа</h3><button class='close-btn' onclick='closeSheet()'>×</button></div><input id='name' class='field' placeholder='Ваше имя' /><input id='phone' class='field' placeholder='Телефон' /><textarea id='comment' class='field' rows='3' placeholder='Комментарий к заказу'></textarea><button class='btn' onclick='submitOrder()'>Отправить заказ</button>`; }
 async function submitOrder() {
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
@@ -632,13 +660,14 @@ async function submitOrder() {
     cart = {}; renderSuccess(data.order_id); updateCartUI(); if (tg?.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
   } catch (e) { toast(e.message || 'Не удалось отправить заказ'); }
 }
-function renderSuccess(orderId) { sheetEl.innerHTML = `<div class='success'><div class='icon'>✅</div><h3 class='sheet-title'>Заказ #${orderId} принят</h3><p style='color:#7d7068'>Спасибо! Скоро свяжемся с вами 💛</p><button class='btn' onclick='closeSheet();renderHome();'>Вернуться в каталог</button></div>`; }
-function openSheet() { sheetEl.classList.add('open'); }
-function closeSheet() { sheetEl.classList.remove('open'); }
+function renderSuccess(orderId) { sheetEl.innerHTML = `<div class='sheet-head'><h3 class='sheet-title'>Заказ оформлен</h3><button class='close-btn' onclick='closeSheet()'>×</button></div><div class='success'><div class='icon'>✅</div><h3 class='sheet-title'>Заказ #${orderId} принят</h3><p style='color:#7d7068'>Спасибо! Скоро свяжемся с вами 💛</p><button class='btn' onclick='closeSheet();'>Вернуться в каталог</button></div>`; }
+function openSheet() { overlayEl.classList.add('open'); sheetEl.classList.add('open'); }
+function closeSheet() { overlayEl.classList.remove('open'); sheetEl.classList.remove('open'); }
 document.getElementById('homeBtn').onclick = () => { closeSheet(); renderHome(); };
 document.getElementById('catalogBtn').onclick = () => { closeSheet(); renderHome(); };
 document.getElementById('cartBtn').onclick = renderCart;
 stickyCart.onclick = renderCart;
+overlayEl.onclick = closeSheet;
 appEl.innerHTML = `<section class='skeleton'><div class='s-card'></div><div class='s-card'></div><div class='s-card'></div><div class='s-card'></div></section>`;
 setTimeout(renderHome, 220);
 </script>
